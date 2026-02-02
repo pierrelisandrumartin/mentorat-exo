@@ -10,7 +10,7 @@ sayHello("Pierre");
 sayHello("Marie");
 
 // Fonctions à faire pour la semaine prochaine (Séance 2)
-// click droit plus code run pour voir un morceau de code 
+// click droit plus code run pour voir un morceau de code
 
 /**
  * Cette fonction dit si une personne est mineure ou majeure.
@@ -18,11 +18,17 @@ sayHello("Marie");
  * @returns {boolean} - Retourne true si la personne est mineure (moins de 18 ans), false sinon.
  */
 const isMinor = (age) => {
- if (age >=17){return (" false")
+  if (age >= 17) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+if (isMinor(15) === true) {
+  console.log("Je suis mineur!");
 }
-    else {return(" true")
-}
-}
+
 console.log(isMinor(15)); // true
 console.log(isMinor(18)); // false
 console.log(isMinor(20)); // false
@@ -34,14 +40,21 @@ console.log(isMinor(20)); // false
  * @returns {boolean} - Retourne true si la personne est mineure (moins de 18 ans), false sinon.
  */
 const isMinorWorldwide = (age, country) => {
-  let Majority 
-  if (country == "France") {Majority = 18}
-  if (country == "USA") {Majority = 21}
-  if (age >=Majority){return(age, country+" false")
-}
-    else {return(age, country+" true")
-}
+  let majorityAge;
+  if (country == "France") {
+    majorityAge = 18;
+  }
+  if (country == "USA") {
+    majorityAge = 21;
+  }
+  if (age >= majorityAge) {
+    return false;
+  } else {
+    return true;
+  }
 };
+
+console.log("--- Tests isMinorWorldwide ---");
 
 console.log(isMinorWorldwide(15, "France")); // true
 console.log(isMinorWorldwide(18, "France")); // false
@@ -56,14 +69,18 @@ console.log(isMinorWorldwide(21, "USA")); // false
  * @return {boolean} - Retourne true si la personne est mineure, false sinon.
  */
 const isPersonMinorWorldwide = (person) => {
-  let Majority 
-  if (person.country == "France") {Majority = 18}
-  if (person.country == "USA") {Majority = 21}
-  if (person.age >=Majority){return(person.name+" false")
-}
-    else {return(person.name+" true")
-}
-  
+  let Majority;
+  if (person.country == "France") {
+    Majority = 18;
+  }
+  if (person.country == "USA") {
+    Majority = 21;
+  }
+  if (person.age >= Majority) {
+    return  false;
+  } else {
+    return  true;
+  }
 };
 
 console.log(
