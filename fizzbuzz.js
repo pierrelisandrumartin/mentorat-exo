@@ -36,7 +36,12 @@ function fizzBuzz(number) {
     result += "Buzz";
   }
 
-  return result.length > 0 ? result : number;
+  if (result.length > 0) {
+    return result
+  }
+  else {
+    return number
+  }
 }
 
 // Exemples d'utilisation
@@ -56,21 +61,7 @@ console.log(fizzBuzz(52)); // Buzz
 
 function compute() {
     for (let num = 1; num <= 100; num++) {
-        let result = '';
-
-        if (num % 3 === 0 || String(num).includes('3')) {
-            result += 'Fizz';
-        }
-
-        if (num % 5 === 0 || String(num).includes('5')) {
-            result += 'Buzz';
-        }
-
-        if (result.length === 0) {
-            result = num;
-        }
-
-        console.log(result);
+        console.log(fizzBuzz(num));
     }
 }
 compute();
